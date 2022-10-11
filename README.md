@@ -15,8 +15,24 @@ O que fiz foi passar o programa em C do Carlos para Python 2 (a versão da máqu
 
 * Primeiro se escolhe o método de ordenação.
 
-![Menu 1 - escolha do método de ordenação](https://github.com/earmarques/metodos-ordenacao/blob/main/images/menu1.png (Menu 1 - escolha do método de ordenação))
+<img width=70% alt="Menu 1 - escolha do método de ordenação" title="Menu 1 - escolha do método de ordenação" src= "https://github.com/earmarques/metodos-ordenacao/blob/main/images/menu1.png" />
 
-Veja que temos mais de um tipo de implementação para o mesmo método. <kbd>Bubble sort</kbd> tem o normal direto e o invertido. O de mesclagem (<kbd>merge sort<kbd>) tem o recursivo e o não recursivo. Para o meu preferido fiz três implementações - melhor ver o [código]() ou a documentação na [wiki](https://github.com/earmarques/metodos-ordenacao/wiki) do repositório.
-  
+Veja que temos mais de um tipo de implementação para o mesmo método. <kbd>Bubble sort</kbd> tem o normal direto e o invertido. O de mesclagem (<kbd>merge sort</kbd>) tem o recursivo e o não recursivo. Para o meu preferido fiz três implementações - melhor ver o [código](https://github.com/earmarques/metodos-ordenacao/blob/main/MetodosOrdenacao.py) ou a documentação na [wiki](https://github.com/earmarques/metodos-ordenacao/wiki) do repositório.
+
+
+<img width=70% alt="Escolha do tipo de teste" title="Escolha do tipo de teste" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/menu2.png" >
+<img width=70% alt="Validação do método" title="Validação do método" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/validacao_algoritmo.png" >
+<img width=70% alt="Bubble sort - 40 mil randômico" title="Bubble sort - 40 mil randômico" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/bubble-40mil-random.png" >
+<img width=70% alt="Quick sort - 40 mil randômico" title="Quick sort - 40 mil randômico" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/quick_40mil-random.png" >
+<img width=70% alt="Quicksort recursivo - 40mil stackOverFlow" title="Quicksort recursivo - 40mil stackOverFlow" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/quick_op7-stackoverflow.png" />
+<img width=70% alt="Quicksort recursivo - 40mil stackOverFlow 2" title="Quicksort recursivo - 40mil stackOverFlow 2" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/quick_op7-stackoverflow2.png" />
+
+
+<img width=70% alt="" title="" src="" />
+<img width=70% alt="" title="" src="" />
+<img width=70% alt="" title="" src="" />
+<img width=70% alt="" title="" src="" />
+<img width=70% alt="" title="" src="" />
+<img width=70% alt="" title="" src="" />
+
   
