@@ -10,3 +10,13 @@ A parte I do curso é toda em linguagem C, não há nada como C para entender al
 Pois bem, na ocasião em que estávamos vendo filas e pilhas, pilha de chamadas a métodos, o Professor foi abordar a elegante <strong><em>programação recursiva</em></strong>. É aqui que surge este repositório. O Professor nos forneceu uma implementação de algoritmos de ordenaçao escrito em C. Já havia algumas semanas que estavamos brincando com Python, já estávamos 'bem acostumados' com as mordomias de uma linguagem moderna e de repente voltamos a esculpir conceitos no machado. Me soou como uma quebra de simetria.
 
 O que fiz foi passar o programa em C do Carlos para Python 2 (a versão da máquina do Professor). No aspecto visual está absoltumante igual, mesma saída, mesma interação com o usuário. Agora o professor Carlos não precisa mais revisitar a linguagem C do início do curso, pode permanecer em Python tratando dos conceitos elementares e comuns a qualquer linguagem.
+
+## Apresentação
+
+* Primeiro se escolhe o método de ordenação.
+
+![Menu 1 - escolha do método de ordenação](https://github.com/earmarques/metodos-ordenacao/blob/main/images/menu1.png (Menu 1 - escolha do método de ordenação))
+
+Veja que temos mais de um tipo de implementação para o mesmo método. <kbd>Bubble sort</kbd> tem o normal direto e o invertido. O de mesclagem (<kbd>merge sort<kbd>) tem o recursivo e o não recursivo. Para o meu preferido fiz três implementações - melhor ver o [código]() ou a documentação na [wiki](https://github.com/earmarques/metodos-ordenacao/wiki) do repositório.
+  
+  
