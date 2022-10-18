@@ -1081,8 +1081,7 @@ def main():
         print('            Levou {:.3f} segundos para calcular\n'.format(diferenca.total_seconds()) )
 
 
-# ==================================================================================================
-  # Loop Principal do Programa    --------------------------------------------------------------------
+  # Loop Principal do Programa     -----------------------------------------------------------------
   # Interação com o usuário através do menu de opções
 
   while True:
