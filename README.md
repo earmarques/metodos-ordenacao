@@ -1,5 +1,7 @@
 # Métododos de Ordenação
 Programa didático com testes de desempenho para os métodos de ordenação implementados em `Python 2` : <kbd>bubble sort</kbd>, <kbd>insertion sort</kbd>, <kbd>merge sort</kbd>, <kbd>quick_sort</kbd> e <kbd>selection_sort</kbd>. 
+<br>
+Programadores mais experientes podem achar exagerado a quantidade de comentários, mas o público alvo são estudantes que estão começando na programação, que não têm nem domínio pleno da linguagem Python nem maturidade em raciocinar na lógica de programação, por isso fizemos um descrição detalhada do código. 
 
 ### Contexto
 
@@ -33,7 +35,9 @@ Veja que temos mais de um tipo de implementação para o mesmo método. <kbd>Bub
 
 
 #### Opção 1. Validação do método
-A opção 1 é uma inspeção visual do comportamento do método. Sempre usamos o mesmo vetor de oito elementos e imprimimos todos os passos da ordenação. Dessa forma fica fácil checar as movimentações dos elementos pelo algorítmo e comparar seu _modus operandi_ com os demais métodos.
+A opção 1 é uma inspeção visual do comportamento do método. 
+<br>
+Sempre usamos o mesmo vetor de oito elementos e imprimimos todos os passos da ordenação. Dessa forma, fica fácil checar as movimentações dos elementos pelo algorítmo e comparar seu _modus operandi_ com os demais métodos.
 Na figura a seguir, vemos as permutas dos elementos realizadas pelo <kbd>bubble sort</kbd> a cada passada do loop. Mentalmente visualizamos a bolha ao redor número 11, o 5° elemento do vetor, deslocando-o para o início do vetor a cada passo.
 
 <img width=70% alt="Validação do método" title="Validação do método" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/validacao_algoritmo.png"><br>
@@ -42,7 +46,9 @@ Na figura a seguir, vemos as permutas dos elementos realizadas pelo <kbd>bubble 
 
 #### Opções 2 e 3. Vetores Aleatórios
 
-Nas opções 2 e 3 criamos vetores de 20 mil e 40 mil, respectivamente, com valores tomados aleatóriamente. E aplicamos o método de ordenação escolhido e mostramos tempo necessário para completar a ordenação.  Com esses vetores o estudante pode fazer a comparação de desempenho entre os algoritmos comparando os tempos de um e de outro. Por exemplo, aplicamos o método de ordenação _bubble sort_ a um vetor randômico de 40 mil elementos e o resultado está na figura 4. Na figura 5 temos o desempenho do _quick sort tail 2_ para um vetor semelhante, de 40 mil elementos gerados aleatóriamente.
+Nas opções 2 e 3 criamos vetores de 20 mil e 40 mil, respectivamente, com valores tomados aleatóriamente. 
+<br>
+E aplicamos o método de ordenação escolhido e mostramos o tempo necessário para completar a ordenação.  Com esses vetores o estudante pode fazer a comparação de desempenho entre os algoritmos, comparando os tempos de um e de outro. Por exemplo, aplicamos o método de ordenação _bubble sort_ a um vetor randômico de 40 mil elementos e o resultado está na figura 4. Na figura 5 temos o desempenho do _quick sort tail 2_ para um vetor semelhante, de 40 mil elementos gerados aleatóriamente.
 
 <img width=70% alt="Bubble sort - 40 mil randômico" title="Bubble sort - 40 mil randômico" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/bubble-40mil-random.png" ><br>
 <sup>_Figura 4: Desempenho do bubble sort_</sup>
@@ -50,8 +56,13 @@ Nas opções 2 e 3 criamos vetores de 20 mil e 40 mil, respectivamente, com valo
 <img width=70% alt="Quick sort - 40 mil randômico" title="Quick sort - 40 mil randômico" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/quick_40mil-random.png" ><br>
 <sup>_Figura 5: Desempenho do quick sort recursivo_</sup>
 
-Nesse caso específico, enquanto o bubble sort levou 84 segundos para ordenar o vetor, o quick sort levou apenas 5 centésimos de segundo
+Nesse caso específico, enquanto o _bubble sort_ levou 84 segundos para ordenar o vetor, o _quick sort_ levou apenas 5 centésimos de segundo. Mostrando que o método da bolha é pop, talvez o mais famoso, mas tem um desempenho sofrível. 
 
+#### Opções 4 e 5. Vetores Decrescentes
+
+Nas opções 4 e 5 criamos vetores de 20 mil e 40 mil, respectivamente, com valores já ordenandos, mas em ordem decrescente. Nesta situação, o método de ordernação ter de inverter totalmente o vetor e isso pode ser extremamente custoso em recursos computaionais para alguns algoritmos.
+<br>
+E 
 
 <img width=80% alt="Quicksort recursivo - 40mil stackOverFlow" title="Quicksort recursivo - 40mil stackOverFlow" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/quick_op7-stackoverflow.png" /><br>
 <sup>_Figura : _</sup>
