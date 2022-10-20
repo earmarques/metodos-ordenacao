@@ -122,6 +122,6 @@ E corrija o path do python pela saída do whereis, ficaria algo assim: #!/usr/bi
 
 
 ### Colab
-Pode executar no próprio navegar usando o Google Colab <a href="https://colab.research.google.com/"><img src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/colab.png" alt="Google Colab" title="Google Colab"></a>. Crie um novo notebook e cole o código de <kbd>metodos_ordenacao.py</kbd> e aperte o play.
+Pode executar no próprio navegar usando o Google Colab <a href="https://colab.research.google.com/"><img src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/colab.png" alt="Google Colab" title="Google Colab"></a> Crie um novo notebook e cole o código de <kbd>metodos_ordenacao.py</kbd> e aperte o play.
 
   
