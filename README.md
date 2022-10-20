@@ -20,7 +20,7 @@ O que fiz foi passar o programa em C do Carlos para Python 2 (a versão da máqu
 
 * Primeiro se escolhe o método de ordenação.
 
-<img width=70% alt="Menu 1 - escolha do método de ordenação" title="Menu 1 - escolha do método de ordenação" src= "https://github.com/earmarques/metodos-ordenacao/blob/main/images/menu1.png" /><br>
+<img width=60% alt="Menu 1 - escolha do método de ordenação" title="Menu 1 - escolha do método de ordenação" src= "https://github.com/earmarques/metodos-ordenacao/blob/main/images/menu1.png" /><br>
 <sup>_Figura 1: Menu 1, escolha do método de ordenação_</sup>
 
 Veja que temos mais de um tipo de implementação para o mesmo método. <kbd>bubble sort</kbd> tem o normal direto e o invertido. O de mesclagem (<kbd>merge sort</kbd>) tem o recursivo e o não recursivo. Para o meu preferido <kbd>quick sort</kbd> fiz três implementações e acredito ser necessário dar mais informações sobre esse métodos e suas variações. 
@@ -35,7 +35,7 @@ A terceira implementação do _quick sort_ da opção 72 é a única em que não
 
 * Após a escolha do algoritmo de ordenação temos um segundo menu para fazermos a escolha do teste de carga ao qual o algoritmo será submetido.
 
-<img width=70% alt="Escolha do tipo de teste" title="Escolha do tipo de teste" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/menu2.png"><br>
+<img width=60% alt="Escolha do tipo de teste" title="Escolha do tipo de teste" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/menu2.png"><br>
 <sup>_Figura 2: Menu 2, escolha do tipo de teste_</sup>
 
 
@@ -45,7 +45,7 @@ A opção 1 é uma inspeção visual do comportamento do método.
 Sempre usamos o mesmo vetor de oito elementos e imprimimos todos os passos da ordenação. Dessa forma, fica fácil checar as movimentações dos elementos pelo algorítmo e comparar seu _modus operandi_ com os demais métodos.
 Na figura a seguir, vemos as permutas dos elementos realizadas pelo <kbd>bubble sort</kbd> a cada passada do loop. Mentalmente visualizamos a bolha ao redor número 11, o 5° elemento do vetor, deslocando-o para o início do vetor a cada passo.
 
-<img width=70% alt="Validação do método" title="Validação do método" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/validacao_algoritmo.png"><br>
+<img width=60% alt="Validação do método" title="Validação do método" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/validacao_algoritmo.png"><br>
 <sup>_Figura 3: Bubble sort, etapas da ordenação_</sup>
 
 
@@ -55,10 +55,10 @@ Nas opções 2 e 3 criamos vetores de 20 mil e 40 mil, respectivamente, com valo
 <br>
 Aplicamos o método de ordenação escolhido e mostramos o tempo necessário para completar a ordenação.  Com esses vetores o estudante pode fazer a comparação de desempenho entre os algoritmos, comparando os tempos de um e de outro. Por exemplo, aplicamos o método de ordenação _bubble sort_ a um vetor randômico de 40 mil elementos e o resultado está na figura 4. Na figura 5 temos o desempenho do _quick sort tail 2_ para um vetor semelhante, de 40 mil elementos gerados aleatóriamente.
 
-<img width=70% alt="Bubble sort - 40 mil randômico" title="Bubble sort - 40 mil randômico" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/bubble-40mil-random.png" ><br>
+<img width=60% alt="Bubble sort - 40 mil randômico" title="Bubble sort - 40 mil randômico" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/bubble-40mil-random.png" ><br>
 <sup>_Figura 4: Desempenho do bubble sort_</sup>
 
-<img width=70% alt="Quick sort - 40 mil randômico" title="Quick sort - 40 mil randômico" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/quick_40mil-random.png" ><br>
+<img width=60% alt="Quick sort - 40 mil randômico" title="Quick sort - 40 mil randômico" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/quick_40mil-random.png" ><br>
 <sup>_Figura 5: Desempenho do quick sort recursivo_</sup>
 
 Nesse caso específico, enquanto o _bubble sort_ levou 84 segundos para ordenar o vetor, o _quick sort_ levou apenas 5 centésimos de segundo. Mostrando que o método da bolha é pop, talvez o mais famoso, mas tem um desempenho sofrível. 
