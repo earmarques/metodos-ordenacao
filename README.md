@@ -98,13 +98,13 @@ sudo apt install python3
 ## Executar
 
 ### Com o comando python
-Baixe o arquivo metodos_ordenacao.py e no mesmo diretório execute o comando:
+Baixe o arquivo <kbd>metodos_ordenacao.py</kbd> e no mesmo diretório execute o comando:
 
 ```sh
 python metodos_ordenacao.py
 ```
 ### Como shell script
-Baixe o arquivo metodos_ordenacao.py e forneça permissão de execução ao arquivo:
+Baixe o arquivo <kbd>metodos_ordenacao.py</kbd> e forneça permissão de execução ao arquivo:
 
 ```sh
 chmod +x metodos_ordenacao.py
