@@ -84,7 +84,6 @@ Verifique com o comando:
 python --version
 ```
 <kbd>_Output: Python 3.10.6_</kbd>
-https://earmarques.github.io/projetos/metodos-ordenacao/metodos_ordenacao.html
 Caso não esteja instalado, instale com os comandos abaixo:
 ```sh
 sudo apt update
