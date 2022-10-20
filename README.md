@@ -75,12 +75,53 @@ Um exemplo está na figura 6. Escolhemos no menu a opção 7.1, um tipo de imple
 <img width=80% alt="Quicksort recursivo - 40mil stackOverFlow 2" title="Quicksort recursivo - 40mil stackOverFlow 2" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/quick_op7-stackoverflow2.png" /><br>
 <sup>_Figura 7b: Estouro da pilha de chamada_</sup>
 
+---
 
-<img width=70% alt="" title="" src="" />
-<img width=70% alt="" title="" src="" />
-<img width=70% alt="" title="" src="" />
-<img width=70% alt="" title="" src="" />
-<img width=70% alt="" title="" src="" />
-<img width=70% alt="" title="" src="" />
+## Dependência
+Precisa do Python 3 instalado. Se usa GNU/Linux, provavelmente já possui alguma versão do Python instalada por padrão.
+Verifique com o comando:
+```sh
+python --version
+```
+<kbd>_Output: Python 3.10.6_</kbd>
+
+Caso não esteja instalado, instale com os comandos abaixo:
+```sh
+sudo apt update
+```
+```sh
+sudo apt install python3
+```
+
+---
+
+## Executar
+
+### Com o comando python
+Baixe o arquivo metodos_ordenacao.py e no mesmo diretório execute-o comando:
+
+```sh
+python metodos_ordenacao.py
+```
+### Como shell script
+Baixe o arquivo metodos_ordenacao.py e forneça permissão de execução ao arquivo:
+
+```sh
+chmod +x metodos_ordenacao.py
+```
+E execute com:
+```sh
+./metodos_ordenacao.py
+```
+
+Se encontrar algum erro na linha 1 devido a `#!/usr/bin/env python3` dê o comando 
+```sh
+whereis python
+```
+E corrija o path do python pela saída do whereis, ficaria algo assim: #!/usr/bin/python
+
+
+### Colab
+Pode executar no próprio navegar usando o Google Colab <a href="https://colab.research.google.com/"><img src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/colab.png" alt="Google Colab" title="Google Colab"></a>. Crie um novo notebook e cole o código de <kbd>metodos_ordenacao.py</kbd> e aperte o play.
 
   
