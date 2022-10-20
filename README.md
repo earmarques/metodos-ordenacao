@@ -9,7 +9,7 @@ Terceiro semestre na Fatec, disciplina Estrutura de Dados ministrada pelo querid
 
 A parte I do curso é toda em linguagem C, não há nada como C para entender alocação de memória e como as coisas num nível mais elementar se organiza. A Fatec tem a preocupação de se alinhar ao mercado, então vimos Python, uma linguagem em alta e gostosa de programar que nos foi apresentada no semestre anterior pelo Professor Dr. Dezani. Logo, na breve parte II do curso de Estrutura de Dados tivemos uma revisão de Python, para posteriormente seguir com a parte III onde veríamos filas, pilhas, listas ligadas, árvores binárias etc.
 
-Pois bem, na ocasião em que estávamos vendo filas e pilhas, pilha de chamadas a métodos, o Professor foi abordar a elegante <strong><em>programação recursiva</em></strong>. É aqui que surge este repositório. O Professor nos forneceu uma implementação de algoritmos de ordenaçao escrito em C. Já havia algumas semanas que estavamos brincando com Python, já estávamos 'bem acostumados' com as mordomias de uma linguagem moderna e de repente voltamos a esculpir conceitos no machado. Me soou como uma quebra de simetria.
+Pois bem, na ocasião em que estávamos vendo filas e pilhas, pilha de chamadas a métodos, o Professor foi abordar a elegante <em>programação recursiva</em>. É aqui que nasce este repositório. O Professor nos forneceu uma implementação de algoritmos de ordenaçao escrito em C. Já havia algumas semanas que estavamos brincando com Python, já estávamos "bem acostumados" com as mordomias de uma linguagem moderna e de repente voltamos a esculpir conceitos no machado. Me soou como uma quebra de simetria.
 
 O que fiz foi passar o programa em C do Carlos para Python 2 (a versão da máquina do Professor). No aspecto visual está absolutamente igual, mesma saída, mesma interação com o usuário. Agora o professor Carlos não precisa mais revisitar a linguagem C do início do curso, pode permanecer em Python tratando dos conceitos elementares e comuns a qualquer linguagem.
 
@@ -23,12 +23,17 @@ O que fiz foi passar o programa em C do Carlos para Python 2 (a versão da máqu
 <img width=70% alt="Menu 1 - escolha do método de ordenação" title="Menu 1 - escolha do método de ordenação" src= "https://github.com/earmarques/metodos-ordenacao/blob/main/images/menu1.png" /><br>
 <sup>_Figura 1: Menu 1, escolha do método de ordenação_</sup>
 
-Veja que temos mais de um tipo de implementação para o mesmo método. <kbd>Bubble sort</kbd> tem o normal direto e o invertido. O de mesclagem (<kbd>merge sort</kbd>) tem o recursivo e o não recursivo. Para o meu preferido fiz três implementações. Detalhes de implementação podem ser visto no [código](https://github.com/earmarques/metodos-ordenacao/blob/main/MetodosOrdenacao.py) ou comentada na documentação [wiki](https://github.com/earmarques/metodos-ordenacao/wiki) do repositório.
+Veja que temos mais de um tipo de implementação para o mesmo método. <kbd>bubble sort</kbd> tem o normal direto e o invertido. O de mesclagem (<kbd>merge sort</kbd>) tem o recursivo e o não recursivo. Para o meu preferido <kbd>quick sort</kbd> fiz três implementações e acredito ser necessário dar mais informações sobre esse métodos e suas variações. 
 
+A primeira implementação (opção 7) é a tradicional, como o método foi inicialmente concebido. Nela o algoritmo mergulha em recorrência sempre pelo particionamento à esquerda do pivô e quando bate no fundo pula para o particionamento à direita do pivô e depois vem subindo nos particionamentos e fazendo o lado direito. Isso é ruim porque se empilha demais, faz muitas chamadas em recorrência. O pior cenário é quando temos vetores ordenados em ordem decrescente. Com um vetor assim, o algoritmo tem de inverter totalmente o vetor e para tanto faria muita recorrência, ocasionando o estouro da pilha (_stack over flow_).
 
-### Teste de carga (Benchmark)
+A segunda implementação do _quick sort_ está na opção 71. Nela a recursividade ocorre em uma partição de cada vez, o que requer um empilhamento de chamadas menor. Ainda assim, no vetor de teste descrescente de 20.000 elementos já há o derramamento da pilha. No _quick sort tail1_ a recorrência sempre entra pelo mesmo lado, no caso, pelo particionamento à esquerda do pivô. Na realidade, o _quick sort_ da opção 71 é uma preparação para o estudante compreender o _quick sort tail2_.
 
-* Após a escolha do algoritmo de ordenação temos um segundo menu para fazermos a escolha do teste de carga ao qual o algorítmo será submetido.
+A terceira implementação do _quick sort_ da opção 72 é a única em que não ocorre o estouro da pilha de chamadas, mesmo para o vetor descrescente de 40.000 elementos. O _quick sort tail2_ é uma melhoria do caudal 1, com um critério mais inteligente. Nele a recursividade desce sempre pelo menor particionamento. Depois de encontrar a posição correta do pivô compare-se o tamanho de cada lado e se faz a recorrência na partição menor. Dessa forma, além de atacar apenas uma partição por vez, ataca-se a partição menor, sendo assim, o mergulho na recursividade não é tão fundo, retorna-se mais rápido pois a pilha de chamada é mais rasa, é menor.
+
+### Teste de carga (_Benchmark_)
+
+* Após a escolha do algoritmo de ordenação temos um segundo menu para fazermos a escolha do teste de carga ao qual o algoritmo será submetido.
 
 <img width=70% alt="Escolha do tipo de teste" title="Escolha do tipo de teste" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/menu2.png"><br>
 <sup>_Figura 2: Menu 2, escolha do tipo de teste_</sup>
@@ -48,7 +53,7 @@ Na figura a seguir, vemos as permutas dos elementos realizadas pelo <kbd>bubble 
 
 Nas opções 2 e 3 criamos vetores de 20 mil e 40 mil, respectivamente, com valores tomados aleatóriamente. 
 <br>
-E aplicamos o método de ordenação escolhido e mostramos o tempo necessário para completar a ordenação.  Com esses vetores o estudante pode fazer a comparação de desempenho entre os algoritmos, comparando os tempos de um e de outro. Por exemplo, aplicamos o método de ordenação _bubble sort_ a um vetor randômico de 40 mil elementos e o resultado está na figura 4. Na figura 5 temos o desempenho do _quick sort tail 2_ para um vetor semelhante, de 40 mil elementos gerados aleatóriamente.
+Aplicamos o método de ordenação escolhido e mostramos o tempo necessário para completar a ordenação.  Com esses vetores o estudante pode fazer a comparação de desempenho entre os algoritmos, comparando os tempos de um e de outro. Por exemplo, aplicamos o método de ordenação _bubble sort_ a um vetor randômico de 40 mil elementos e o resultado está na figura 4. Na figura 5 temos o desempenho do _quick sort tail 2_ para um vetor semelhante, de 40 mil elementos gerados aleatóriamente.
 
 <img width=70% alt="Bubble sort - 40 mil randômico" title="Bubble sort - 40 mil randômico" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/bubble-40mil-random.png" ><br>
 <sup>_Figura 4: Desempenho do bubble sort_</sup>
