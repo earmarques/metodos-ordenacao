@@ -84,7 +84,7 @@ Verifique com o comando:
 python --version
 ```
 <kbd>_Output: Python 3.10.6_</kbd>
-
+https://earmarques.github.io/projetos/metodos-ordenacao/metodos_ordenacao.html
 Caso não esteja instalado, instale com os comandos abaixo:
 ```sh
 sudo apt update
@@ -128,7 +128,7 @@ Pode executar no próprio navegar usando o Google Colab <a href="https://colab.r
 
 ## Documentação
 
-No código do arquivo <kbd>metodos_ordenacao.py</kbd> há comentários padronizados segundo as recomendações para se gerar uma documentação html. Execute os comandos a seguir para gerar essa documentação na sua própria máquina. O html gerado pode ser visto <a href="https://github.com/earmarques/earmarques.github.io/blob/main/projetos/metodos-ordenacao/metodos_ordenacao.html">AQUI</a>. 
+No código do arquivo <kbd>metodos_ordenacao.py</kbd> há comentários padronizados segundo as recomendações para se gerar uma documentação html. Execute os comandos a seguir para gerar essa documentação na sua própria máquina. O html gerado pode ser visto <a href="https://earmarques.github.io/projetos/metodos-ordenacao/metodos_ordenacao.html">AQUI</a>. 
 
 * Instale o gerenciador de pacotes do Python, o **pip**
 ```
