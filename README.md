@@ -60,15 +60,15 @@ Nesse caso específico, enquanto o _bubble sort_ levou 84 segundos para ordenar 
 
 #### Opções 4 e 5. Vetores Decrescentes
 
-Nas opções 4 e 5 criamos vetores de 20 mil e 40 mil, respectivamente, com valores já ordenandos, mas em ordem decrescente. Nesta situação, o método de ordernação ter de inverter totalmente o vetor e isso pode ser extremamente custoso em recursos computaionais para alguns algoritmos.
+Nas opções 4 e 5 criamos vetores de 20 mil e 40 mil, respectivamente, com valores já ordenandos, mas em ordem decrescente. Nesta situação, o método de ordernação tem de inverter totalmente o vetor e isso pode ser extremamente custoso em recursos computaionais para alguns algoritmos.
 <br>
-E 
+Um exemplo está na figura 6. Escolhemos no menu a opção 7.1, um tipo de implementação do _quicksort recursivo_ em que estora a pilha de chamadas. Já com a segunda forma de implementar o _quicksort_ recursivamente da opção 7.2 o estouro não acontece.
 
 <img width=80% alt="Quicksort recursivo - 40mil stackOverFlow" title="Quicksort recursivo - 40mil stackOverFlow" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/quick_op7-stackoverflow.png" /><br>
-<sup>_Figura : _</sup>
+<sup>_Figura 6a: Estouro da pilha de chamada_</sup>
 
 <img width=80% alt="Quicksort recursivo - 40mil stackOverFlow 2" title="Quicksort recursivo - 40mil stackOverFlow 2" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/quick_op7-stackoverflow2.png" /><br>
-<sup>_Figura : _</sup>
+<sup>_Figura 7b: Estouro da pilha de chamada_</sup>
 
 
 <img width=70% alt="" title="" src="" />
