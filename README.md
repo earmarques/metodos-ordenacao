@@ -128,7 +128,7 @@ Pode executar no próprio navegar usando o Google Colab <a href="https://colab.r
 
 ## Documentação
 
-No código do arquivo <kbd>metodos_ordenacao.py</kbd> há comentários padronizados segundo as recomendações para se gerar uma documentação html. Execute os comandos a seguir para gerar essa documentação na sua própria máquina. O html gerado pode ser visto <a href="https://github.com/earmarques/earmarques.github.io/blob/main/projetos/metodos-ordenacao/MetodosOrdenacao.html">AQUI</a>. 
+No código do arquivo <kbd>metodos_ordenacao.py</kbd> há comentários padronizados segundo as recomendações para se gerar uma documentação html. Execute os comandos a seguir para gerar essa documentação na sua própria máquina. O html gerado pode ser visto <a href="https://github.com/earmarques/earmarques.github.io/blob/main/projetos/metodos-ordenacao/metodos_ordenacao.html">AQUI</a>. 
 
 * Instale o gerenciador de pacotes do Python, o **pip**
 ```
@@ -142,7 +142,9 @@ sudo python3 -m pip install pdoc3;
 
 * Agora pede pro _pydoc_ gerar a documentação
 ```
-PYTHONPATH=. pdoc --html metodos_ordenacao.py;
-
 python3 -m pdoc --html metodos_ordenacao.py;
+```
+Se não der certo, tente esse outro. Deverá criar o arquivo ```html/metodos_ordenacao.html```. 
+```
+PYTHONPATH=. pdoc --html metodos_ordenacao.py;
 ```
