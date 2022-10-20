@@ -78,7 +78,7 @@ Um exemplo está na figura 6. Escolhemos no menu a opção 7.1, um tipo de imple
 ---
 
 ## Dependência
-Precisa do Python 3 instalado. Se usa GNU/Linux, provavelmente já possui alguma versão do Python instalada por padrão.
+Precisa do Python instalado. Se usa GNU/Linux, provavelmente já possui alguma versão do Python instalada por padrão.
 Verifique com o comando:
 ```sh
 python --version
