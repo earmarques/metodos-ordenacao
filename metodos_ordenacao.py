@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 #coding=utf-8
 
  #####################################################
@@ -303,21 +304,21 @@ def bubble_sort(vetor, imprimir=False):
     list: O vetor fornecido como parâmetro ordenado.
   """
   # Auxiliar para interromper o loop - se não houver troca de posição o vetor está ordenado
-  trocou = True       # inicia com true só para entrar no loop
-  n = len(vetor)      # número de elementos no vetor
-  barra = n           # posição da barra, inicialmente após o último elemento
+  trocou = True        # inicia com true só para entrar no loop
+  n = len(vetor)       # número de elementos no vetor
+  cursor = n           # posição do cursor, inicialmente após o último elemento
 
   # loop de passos
   while trocou:
     # reinicializa porque se supõe que neste passo ainda não houve troca
     trocou = False
-    # recua a barra em uma posição
-    barra -= 1
+    # recua o cursor em uma posição
+    cursor -= 1
 
-    if imprimir: print('Passo {}'.format(n - barra))
+    if imprimir: print('Passo {}'.format(n - cursor))
 
-    # loop de trocas dentro do passo, até a barra
-    for i in range(barra):
+    # loop de trocas dentro do passo, até o cursor
+    for i in range(cursor):
 
       if vetor[i] > vetor[i + 1]:
 
@@ -351,19 +352,19 @@ def bubble_sort_invertido(vetor, imprimir=False):
   # Auxiliar para interromper o loop - se não houver troca de posição o vetor está ordenado
   trocou = True       # inicia com true só para entrar no loop
   n = len(vetor)      # número de elementos no vetor
-  barra = -1          # posição da barra, inicialmente antes do primeiro elemento
+  cursor = -1          # posição do cursor, inicialmente antes do primeiro elemento
 
   # loop de passos
   while trocou:
    # reinicializa porque se supõe que neste passo ainda não houve troca
    trocou = False
-   # avança a barra em uma posição
-   barra += 1
+   # avança o cursor em uma posição
+   cursor += 1
 
-   if imprimir: print('Passo {}'.format(barra + 1))
+   if imprimir: print('Passo {}'.format(cursor + 1))
 
-   # loop de trocas dentro do passo, até a barra
-   for i in range(n - 1, barra, -1):
+   # loop de trocas dentro do passo, até o cursor
+   for i in range(n - 1, cursor, -1):
 
      if vetor[i] < vetor[i - 1]:
 
@@ -396,21 +397,21 @@ def insertion_sort(vetor, imprimir=False):
   """
 
   n = len(vetor)      # número de elementos no vetor
-  barra = 0           # posição da barra, inicialmente no primeiro elemento
+  cursor = 0           # posição do cursor, inicialmente no primeiro elemento
 
   # loop de passos
   for passo in range(1, n):
 
    if imprimir: print('Passo {}'.format(passo))
 
-   # avança a barra em uma posição
-   barra += 1;
+   # avança o cursor em uma posição
+   cursor += 1;
 
-   # Corro todos os elementos do fim para trás até a posição da barra,
-   # se o vetor[barra] for menor que o antecessor, troco de posição e
+   # Corro todos os elementos do fim para trás até a posição do cursor,
+   # se o vetor[cursor] for menor que o antecessor, troco de posição e
    # comparo com anterior seguinte, levando o elemento (se menor) até a sua posição correta
-   for i in range(barra, 0, -1):
-     # da barra pra trás, todos os elementos já estão em ordem crescente,
+   for i in range(cursor, 0, -1):
+     # do cursor pra trás, todos os elementos já estão em ordem crescente,
      # se o elemento for maior que seu antecessor ele já está na posição correta,
      # posso interromper o loop e ir ao próximo elemento
      if vetor[i - 1] < vetor[i]:
@@ -445,7 +446,7 @@ def selection_sort(vetor, imprimir=False):
   # Variáveis auxiliares
   indice_menor = -1
   n = len(vetor)      # número de elementos no vetor
-  barra = -1          # posição da barra, inicialmente antes do primeiro elemento
+  cursor = -1          # posição do cursor, inicialmente antes do primeiro elemento
 
 
   # loop de passos
@@ -453,19 +454,19 @@ def selection_sort(vetor, imprimir=False):
 
     if imprimir: print('Passo {}'.format(passo))
 
-    # avança a barra em uma posição
-    barra += 1;
+    # avança o cursor em uma posição
+    cursor += 1;
     # encontra o menor valor dentre os elementos não ordenados
-    menor = vetor[barra]
-    indice_menor = barra
-    for i in range(barra + 1, n):
+    menor = vetor[cursor]
+    indice_menor = cursor
+    for i in range(cursor + 1, n):
       if vetor[i] < menor:
         menor = vetor[i]
         indice_menor = i
 
-    # troca o menor com o elemento ao lado direito da barra
-    vetor[indice_menor] = vetor[barra]
-    vetor[barra] = menor
+    # troca o menor com o elemento ao lado direito do cursor
+    vetor[indice_menor] = vetor[cursor]
+    vetor[cursor] = menor
 
     if imprimir: print('Valor de V1: {}'.format(vetor))
 
@@ -668,116 +669,121 @@ def merge_sort_recursivo(vetor, imprimir=False):
 
 # Particionador do Quick Sort     ------------------------------------------------------------------
 
-def particionar(vetor, inicio, fim, imprimir=False):
+def particionar(vetor, indice_inicial, indice_final, imprimir=False):
 
   """ Particionador do Quick Sort
 
-  Pega o elemento do vetor cujo indice(posição) é dado por 'inicio', ``vetor[inicio]``,
+  Pega o elemento(pivô) do vetor cujo indice ou posição é dado por 'indice_inicial', ``vetor[indice_inicial]``,
   e encontra a posição correta do elemento e retorna o índice referente a posição correta.
-  Chamaremos este elemento que estamos procurando sua posição simplesmente de 'elemento_investigado'.
+  Chamaremos este elemento que estamos procurando sua posição simplesmente de 'elemento_pivo_investigado'.
 
-  O algoritmo usa duas barras para correr o vetor no intevalo dos índices [inicio ao fim(inclusive)].
-  A barra da extremidade esquerda avança para a direita até encontrar o elemento subsequente que seja
-  maior que o elemento_investigado. A barra da direita recua para a esquerda até encontrar
-  um elemento que seja menor que o elemento_investigado. Nessa situação, teremos::
+  O algoritmo usa dois cursores para correr o vetor no intevalo dos índices [inicial ao final(inclusive)].
+  O cursor da extremidade esquerda avança para a direita até encontrar o elemento subsequente que seja
+  maior que o elemento_pivo_investigado. O cursor da direita recua para a esquerda até encontrar
+  um elemento que seja menor que o elemento_pivo_investigado. Nessa situação, teremos:
 
-      elemento_esquerda > elemento_investigado > elemento_direita, logo,
+      elemento_esquerda > elemento_pivo_investigado > elemento_direita, logo,
       elemento_esquerda > elemento_direita
 
-  isto é, está fora de ordem, e o algoritmo já os troca de posição ordenando-os, depois prossegue
-  em direção ao centro até as barras volantes se encontrarem.
+  Isto é, está fora de ordem, e o algoritmo já os troca de posição ordenando-os, depois prossegue
+  em direção ao centro até que os cursores volantes se encontrarem.
 
-  A condição de parada ocorre quando a barra da esquerda atropela a direita, ficando com um valor maior.
-  A barra da direita estará com o índice da posição correta, sendo ele o valor retornado pela função.
+  A condição de parada ocorre quando o cursor da esquerda atropela o da direita, ficando com um valor maior.
+  O cursor da direita estará com o índice da posição correta, sendo ele o valor retornado pela função.
 
-  Sinteticamente expresso de uma maneira formal matemática seria::
+  Sinteticamente expresso de uma maneira formal matemática seria:
 
       Recebe vetor v[p..r] com p < r. Rearranja os elementos do vetor e
       devolve j em p..r tal que v[p..j-1] <= v[j] < v[j+1..r].
 
   Args:
       vetor (list): Vetor que será ordenado e particionado logicamente.
-      inicio(int): Índice inicial do intervalo de pesquisa e que determina o elemento cuja posição
-      correta será retornada como a posição do particionamento.
-      fim(int): Índice final do intervalo de pesquisa.
+      indice_inical(int): Índice inicial do intervalo de pesquisa e que determina o elemento pivô cuja posição
+      correta será retornada como a posição do pivô do particionamento.
+      indice_final(int): Índice final do intervalo de pesquisa.
       imprimir (bool, optional): Chave para imprimir ou não os passos intermediários.
       Defaults to False.
 
   Returns:
-    int: A posição do particionamento do vetor.
+    int: A posição do pivô do particionamento do vetor.
   """
-  elemento = vetor[inicio]        # ..a ser investigado qual o seu posicionamento correto no vetor
-  barra_esquerda = inicio + 1     # posicionada no elemento adjacente seguinte
-  barra_direita = fim             # posicionada no último elemento
+  elemento_pivo = vetor[indice_inicial]    # ..a ser investigado qual o seu posicionamento correto no vetor
+  cursor_esquerda = indice_inicial         # posicionado no primeiro elemento
+  cursor_direita = indice_final            # posicionado no último elemento
+  posicao_correta_pivo = -1
 
-  while barra_esquerda <= barra_direita:
+  # A missão primária é encontrar a #posicao_correta_pivo dentro do vetor, mas durante o processo
+  # já vai ordenando, trocando de posição alguns elementos; os que são menores que o pivô e estejam
+  # a direita são trocados com elementos que são maiores que o pivô, mas que estão do lado esquerdo.
 
-    # Encontra o elemento subsequente que seja maior que o elemento investigado
-    if vetor[barra_esquerda] <= elemento:
-      barra_esquerda += 1
+  while cursor_esquerda <= cursor_direita:
 
-    # Encontra, do fim para o começo, o elemento que seja menor que o elemento investigado
-    elif vetor[barra_direita] > elemento:
-      barra_direita -= 1
+    # Encontra o elemento subsequente que seja maior que o elemento pivô investigado
+    if vetor[cursor_esquerda] <= elemento_pivo:
+      cursor_esquerda += 1          # avança
 
-    # |=> vetor[barra_direita] <= elemento < vetor[barra_esquerda] =>
-    # logo, vetor[barra_direita] < vetor[barra_esquerda], isto é, está fora da ordem crescente,
+    # Encontra, do fim para o começo, o elemento que seja menor que o elemento pivô investigado
+    elif vetor[cursor_direita] > elemento_pivo:
+      cursor_direita -= 1           # recua
+
+    # |=> vetor[cursor_esquerda] >= elemento_pivo > vetor[cursor_direita] =>
+    # logo, vetor[cursor_esquerda] > vetor[cursor_direita], isto é, está fora da ordem crescente,
     # o menor tem de ficar a esquerda e o maior a direita, vamos trocá-los de posição
     else:
-      temp = vetor[barra_esquerda]
-      vetor[barra_esquerda] = vetor[barra_direita]
-      vetor[barra_direita] = temp
-      # A posição correta do elemento investigado está entre as barras, continuando a procura
-      barra_esquerda += 1     # avança uma posição
-      barra_direita  -= 1     # recua  uma posição
+      temp = vetor[cursor_esquerda]
+      vetor[cursor_esquerda] = vetor[cursor_direita]
+      vetor[cursor_direita] = temp
+      # A posição correta do elemento pivô investigado está entre os cursores; continuando a procura
+      cursor_esquerda += 1     # avança uma posição
+      cursor_direita  -= 1     # recua  uma posição
 
-  # A posição correta do elemento é dado pela barra_direita
-  posicao_correta = barra_direita
+  # A posição correta do elemento pivô é dado pelo cursor_direita
+  posicao_correta_pivo = cursor_direita
 
   # Vamos trocar de posição, fazendo backup do elemento que está ocupando o lugar
-  # do nosso elemento investigado para o início do vetor
-  vetor[inicio] = vetor[posicao_correta]
-  vetor[posicao_correta] = elemento       # copia o elemento para sua posição correta
+  # do nosso elemento pivô investigado para o lugar do pivô (início do vetor)
+  vetor[indice_inicial] = vetor[posicao_correta_pivo]
+  vetor[posicao_correta_pivo] = elemento_pivo       # copia o elemento pivô para sua posição correta
 
   if imprimir: print('\nValor de V1: {}'.format(vetor))
 
 
-  return posicao_correta
+  return posicao_correta_pivo
 
 
 # Quick Sort Recursivo     -------------------------------------------------------------------------
 
-def quick_sort(vetor, inicio, fim, imprimir=False):
+def quick_sort(vetor, indice_inicial, indice_final, imprimir=False):
 
   """ Quick Sort - Recursão comum.
 
-  Recebe um vetor vetor[inicio..fim], com inicio <= fim + 1,
+  Recebe um vetor vetor[indice_inicial..indice_final], com indice_inicial <= indice_final + 1,
   e rearranja o vetor em ordem crescente.
 
   Args:
       vetor (list): Vetor que será ordenado.
-      inicio(int): Índice inicial do intervalo de pesquisa.
-      fim(int): Índice final do intervalo de pesquisa.
+      indice_inicial(int): Índice inicial do intervalo de pesquisa.
+      indice_final(int): Índice final do intervalo de pesquisa.
       imprimir (bool, optional): Chave para imprimir ou não os passos intermediários.
       Defaults to False.
 
   Returns:
     None: Nada retorna. Opera diretamente com a referência do vetor.
   """
-  posicao_correta_elemento_inicio = -1
+  posicao_pivo_particao = -1
 
-  if inicio < fim:    # indices
-    posicao_particao = particionar(vetor, inicio, fim, imprimir)
+  if indice_inicial < indice_final:    # indices
+    posicao_pivo_particao = particionar(vetor, indice_inicial, indice_final, imprimir)
 
     # partição esquerda
-    quick_sort(vetor, inicio, posicao_particao - 1, imprimir)
+    quick_sort(vetor, indice_inicial, posicao_pivo_particao - 1, imprimir)
     # partição direita
-    quick_sort(vetor, posicao_particao + 1, fim, imprimir)
+    quick_sort(vetor, posicao_pivo_particao + 1, indice_final, imprimir)
 
 
 # Quick Sort Recursivo Caudal - Versão 1     -------------------------------------------------------
 
-def quick_sort_tail_1(vetor, inicio, fim, imprimir=False):
+def quick_sort_tail_1(vetor, indice_inicial, indice_final, imprimir=False):
 
   """ Quick Sort Recursivo Caudal - Versão 1
 
@@ -785,41 +791,42 @@ def quick_sort_tail_1(vetor, inicio, fim, imprimir=False):
 
   Args:
       vetor (list): Vetor que será ordenado.
-      inicio(int): Índice inicial do intervalo de pesquisa.
-      fim(int): Índice final do intervalo de pesquisa.
+      indice_inicial(int): Índice inicial do intervalo de pesquisa.
+      indice_final(int): Índice final do intervalo de pesquisa.
       imprimir (bool, optional): Chave para imprimir ou não os passos intermediários.
       Defaults to False.
 
   Returns:
     None: Nada retorna. Opera diretamente com a referência do vetor.
   """
-  while inicio < fim:
 
-    posicao_particao = particionar(vetor, inicio, fim, imprimir)
+  posicao_pivo_particao = -1
+
+  while indice_inicial < indice_final:
+
+    posicao_pivo_particao = particionar(vetor, indice_inicial, indice_final, imprimir)
 
     # Ordena SEPARADAMENTE elementos 'antes' e 'depois' da partição
-    quick_sort_tail_1(vetor, inicio, posicao_particao - 1, imprimir)
+    quick_sort_tail_1(vetor, indice_inicial, posicao_pivo_particao - 1, imprimir)
 
-    inicio = posicao_particao + 1
+    indice_inicial = posicao_pivo_particao + 1
 
 
-
-# ==================================================================================================
 # Quick Sort Recursivo Caudal - Versão 2     -------------------------------------------------------
 
-def quick_sort_tail_2(vetor, inicio, fim, imprimir=False):
+def quick_sort_tail_2(vetor, indice_inicial, indice_final, imprimir=False):
 
   """ Quick Sort Recursivo Caudal - Versão 2
 
-  Melhor otimizada em relação a memória, a recursividade ocorre em apenas uma partição, e esta
+  Melhor otimização em relação a memória, pois a recursividade ocorre em apenas uma partição, e esta
   partição é a menor, fazendo com que a profundidade das chamadas recursivas seja mais rasa.
 
   Requer espaço auxiliar O(Log n) no pior caso.
 
   Args:
       vetor (list): Vetor que será ordenado.
-      inicio(int): Índice inicial do intervalo de pesquisa.
-      fim(int): Índice final do intervalo de pesquisa.
+      indice_inicial(int): Índice inicial do intervalo de pesquisa.
+      indice_final(int): Índice final do intervalo de pesquisa.
       imprimir (bool, optional): Chave para imprimir ou não os passos intermediários.
       Defaults to False.
 
@@ -830,23 +837,26 @@ def quick_sort_tail_2(vetor, inicio, fim, imprimir=False):
   .. _See below link for complete running code:
       https://ide.geeksforgeeks.org/qrlM31
   """
-  while inicio < fim:
+  posicao_pivo_particao = -1
 
-    posicao_particao = particionar(vetor, inicio, fim, imprimir)
+  while indice_inicial < indice_final:
 
-    # Se parte à esquerda é menor, tratá-la recursivamente
+    posicao_pivo_particao = particionar(vetor, indice_inicial, indice_final, imprimir)
+
+    # Se parte à esquerda do pivô é menor, tratá-la recursivamente
     # e lidar com a parte à dreita iterativamente 'while'
-    if posicao_particao - inicio < fim - posicao_particao:
+    parte_esquerda_eh_menor = posicao_pivo_particao - indice_inicial < indice_final - posicao_pivo_particao
 
-      quick_sort_tail_2(vetor, inicio, posicao_particao - 1, imprimir)
+    if parte_esquerda_eh_menor:
+      quick_sort_tail_2(vetor, indice_inicial, posicao_pivo_particao - 1, imprimir)
 
-      inicio = posicao_particao + 1
+      indice_inicial = posicao_pivo_particao + 1
 
     # Caso contrário: recursão à direita, iteração à esquerda
     else:
-      quick_sort_tail_2(vetor, posicao_particao + 1, fim, imprimir)
+      quick_sort_tail_2(vetor, posicao_pivo_particao + 1, indice_final, imprimir)
 
-      fim = posicao_particao - 1
+      indice_final = posicao_pivo_particao - 1
 
 
 
@@ -1033,15 +1043,15 @@ def main():
 
     elif escolhas['metodo'] == QUICK_RECURSIVO:
       vetor = vetor['vetor']
-      inicio = 0
-      fim = len(vetor) - 1
+      indice_inicial = 0
+      indice_final = len(vetor) - 1
       if eh_teste_fixo:
-        quick_sort(vetor, inicio, fim, True)
+        quick_sort(vetor, indice_inicial, indice_final, True)
       else:
         print('\nOrdenando...')
         abre_cronometro = datetime.now()
         # Aciona ordenação
-        quick_sort(vetor, inicio, fim)
+        quick_sort(vetor, indice_inicial, indice_final)
         fecha_cronometro = datetime.now()
         diferenca = fecha_cronometro - abre_cronometro
         print('            Levou {:.3f} segundos para calcular\n'.format(diferenca.total_seconds()) )
@@ -1050,15 +1060,15 @@ def main():
 
     elif escolhas['metodo'] == QUICK_RECURSIVO_CAUDAL_1:
       vetor = vetor['vetor']
-      inicio = 0
-      fim = len(vetor) - 1
+      indice_inicial = 0
+      indice_final = len(vetor) - 1
       if eh_teste_fixo:
-        quick_sort_tail_1(vetor, inicio, fim, True)
+        quick_sort_tail_1(vetor, indice_inicial, indice_final, True)
       else:
         print('\nOrdenando...')
         abre_cronometro = datetime.now()
         # Aciona ordenação
-        quick_sort_tail_1(vetor, inicio, fim)
+        quick_sort_tail_1(vetor, indice_inicial, indice_final)
         fecha_cronometro = datetime.now()
         diferenca = fecha_cronometro - abre_cronometro
         print('            Levou {:.3f} segundos para calcular\n'.format(diferenca.total_seconds()) )
@@ -1067,21 +1077,21 @@ def main():
 
     elif escolhas['metodo'] == QUICK_RECURSIVO_CAUDAL_2:
       vetor = vetor['vetor']
-      inicio = 0
-      fim = len(vetor) - 1
+      indice_inicial = 0
+      indice_final = len(vetor) - 1
       if eh_teste_fixo:
-        quick_sort_tail_2(vetor, inicio, fim, True)
+        quick_sort_tail_2(vetor, indice_inicial, indice_final, True)
       else:
         print('\nOrdenando...')
         abre_cronometro = datetime.now()
         # Aciona ordenação
-        quick_sort_tail_2(vetor, inicio, fim)
+        quick_sort_tail_2(vetor, indice_inicial, indice_final)
         fecha_cronometro = datetime.now()
         diferenca = fecha_cronometro - abre_cronometro
         print('            Levou {:.3f} segundos para calcular\n'.format(diferenca.total_seconds()) )
 
 
-  # Loop Principal do Programa     -----------------------------------------------------------------
+  # Loop Principal do Programa    ------------------------------------------------------------------
   # Interação com o usuário através do menu de opções
 
   while True:
