@@ -124,6 +124,8 @@ E corrija o path do python pela saída do whereis, ficaria algo assim: #!/usr/bi
 ### Colab
 Pode executar no próprio navegar usando o Google Colab <a href="https://colab.research.google.com/"><img src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/colab.png" alt="Google Colab" title="Google Colab"></a> Crie um novo notebook e cole o código de <kbd>metodos_ordenacao.py</kbd> e aperte o play.
 
+---
+
 ## Documentação
 
 No código do arquivo <kbd>metodos_ordenacao.py</kbd> há comentários padronizados segundo as recomendações para se gerar uma documentação html. Execute os comandos a seguir para gerar essa documentação na sua própria máquina. O html gerado pode ser visto <a href="https://github.com/earmarques/earmarques.github.io/blob/main/projetos/metodos-ordenacao/MetodosOrdenacao.html">AQUI</a>. 
@@ -133,7 +135,7 @@ No código do arquivo <kbd>metodos_ordenacao.py</kbd> há comentários padroniza
 sudo apt install python3-pip;
 ```
 
-* Peça para o pip instalar a biblioteca de geração de documentação **pydoc**
+* Peça para o _pip_ instalar a biblioteca de geração de documentação **pydoc**
 ```
 sudo python3 -m pip install pdoc3;
 ```
