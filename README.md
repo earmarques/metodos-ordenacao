@@ -1,5 +1,5 @@
 # Métododos de Ordenação
-Programa didático com testes de desempenho para os métodos de ordenação implementados em `Python 2` : <kbd>bubble sort</kbd>, <kbd>insertion sort</kbd>, <kbd>merge sort</kbd>, <kbd>quick_sort</kbd> e <kbd>selection_sort</kbd>. 
+Programa didático com testes de desempenho para os métodos de ordenação implementados em `Python 2`: <kbd>bubble sort</kbd>, <kbd>insertion sort</kbd>, <kbd>merge sort</kbd>, <kbd>quick_sort</kbd> e <kbd>selection_sort</kbd>. 
 <br>
 Programadores mais experientes podem achar exagerado a quantidade de comentários, mas o público alvo são estudantes que estão começando na programação, que não têm nem domínio pleno da linguagem Python nem maturidade em raciocinar na lógica de programação, por isso fizemos um descrição detalhada do código. 
 
