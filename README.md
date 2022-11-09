@@ -36,7 +36,7 @@ A terceira implementação do _quick sort_ da opção 72 é a única em que não
 * Após a escolha do algoritmo de ordenação temos um segundo menu para fazermos a escolha do teste de carga ao qual o algoritmo será submetido.
 
 <img width=60% alt="Escolha do tipo de teste" title="Escolha do tipo de teste" src="https://github.com/earmarques/metodos-ordenacao/blob/main/images/menu2.png"><br>
-<sup>_Figura 2: Menu 2, escolha do tipo de teste_</sup>
+_Figura 2: Menu 2, escolha do tipo de teste_
 
 
 #### Opção 1. Validação do método
