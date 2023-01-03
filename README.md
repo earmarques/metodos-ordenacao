@@ -11,7 +11,7 @@ A parte I do curso é toda em linguagem C, não há nada como C para entender al
 
 Pois bem, na ocasião em que estávamos vendo filas e pilhas, o Professor foi abordar a elegante <em>Programação Recursiva</em>. É aqui que nasce este repositório. O Professor nos forneceu uma implementação de algoritmos de ordenaçao escrito em C. Já havia algumas semanas que estavamos brincando com Python, já estávamos "bem acostumados" com as mordomias de uma linguagem moderna e de repente voltamos a esculpir conceitos no machado. 
 
-O que fiz foi passar o programa em C do Carlos para Python 2 (a versão da máquina do Professor). No aspecto visual está absolutamente igual, mesma saída, mesma interação com o usuário. Agora o professor Carlos não precisa mais revisitar a linguagem C do início do curso, pode permanecer em Python tratando dos conceitos elementares e comuns a qualquer linguagem.
+O que fiz foi passar o programa em C do Carlos para Python 2, a versão da máquina do Professor na época. No aspecto visual está absolutamente igual, mesma saída, mesma interação com o usuário. Agora o professor Carlos não precisa mais revisitar a linguagem C do início do curso, pode permanecer em Python tratando dos conceitos elementares e comuns a qualquer linguagem.
 
 ---
 ## Apresentação
